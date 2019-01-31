@@ -72,3 +72,38 @@ function daysInMonth(month, leapYear) {
             return `Must provide a valid month.`;
     }
 }
+
+function rockPaperScissors(num) {
+
+// rock = 1, paper = 2, scissors = 3
+
+    if (num > 3 || num < 1) {
+        throw Error;
+    }
+    const randomNo = Math.floor(Math.random() * 3) + 1;
+
+    if (num === randomNo) {
+        return 'Tie! Throw again.';
+    }
+    
+    if (num === 1 && randomNo === 2) {
+        return 'Paper covers rock. You lose.';
+    }
+    if (num === 1 && randomNo === 3) {
+        return 'Rock beats scissors. You win!';
+    }
+
+    if (num === 2 && randomNo === 3) {
+        return 'Scissors cuts paper. You lose.'
+    }
+    if (num === 2 && randomNo === 1) {
+        return 'Paper covers rock. You win!';
+    }
+    
+    if (num === 3 && randomNo === 1) {
+        return 'Rock breaks scissors. You lose.';
+    }
+    if (num === 3 && randomNo === 2) {
+        return 'Scissors cut paper. You win!';
+    }
+}
